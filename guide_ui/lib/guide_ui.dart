@@ -1,7 +1,6 @@
 library guide_ui;
 
-/// A Calculator.
-class Calculator {
-  /// Returns [value] plus 1.
-  int addOne(int value) => value + 1;
-}
+export 'src/themes/factory_theme.dart';
+export 'src/themes//factory_colors.dart';
+export 'src/widgets/guide_scaffold.dart';
+export 'src/widgets/guide_container.dart';
