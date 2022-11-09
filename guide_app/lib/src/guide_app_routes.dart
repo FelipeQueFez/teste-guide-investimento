@@ -1,5 +1,4 @@
 class GuideAppRoutes {
   static const String init = "/";
-  //TODO:in development
-  static const String another = "/another-url";
+  static const String index_chart = "/index-chart";
 }

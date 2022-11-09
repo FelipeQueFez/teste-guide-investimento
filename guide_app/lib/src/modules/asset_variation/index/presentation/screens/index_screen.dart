@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:guide_app/src/global_instance.dart';
+import 'package:guide_app/src/guide_app_routes.dart';
 import 'package:guide_core/guide_core.dart' show BaseLoadingState, Tr;
 import 'package:guide_ui/guide_ui.dart';
 import '../stores/index_store.dart';
@@ -29,7 +30,12 @@ class _IndexScreenState extends State<IndexScreen> {
 
     return GuideScaffold(
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pushNamed(
+            context,
+            GuideAppRoutes.index_chart,
+          );
+        },
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ),
