@@ -9,6 +9,7 @@ export 'src/models/arguments_model.dart';
 export 'src/use_case/usecase.dart';
 export 'src/state/base_state.dart';
 export 'src/navigator/navigator_keys.dart';
+export 'src/tests/mock_reader.dart';
 
 //LOCALIZATION
 export 'src/localization/i18n.dart';

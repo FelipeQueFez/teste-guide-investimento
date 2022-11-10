@@ -1,4 +1,4 @@
-late final FlavorEnum flavor;
+FlavorEnum? flavor;
 
 enum FlavorEnum { dev, prod }
 
