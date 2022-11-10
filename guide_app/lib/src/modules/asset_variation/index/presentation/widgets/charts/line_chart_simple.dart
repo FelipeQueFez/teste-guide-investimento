@@ -1,8 +1,15 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
+import '../../../data/models/index_asset_model.dart';
+
 class LineChartSimple extends StatefulWidget {
-  const LineChartSimple({Key? key}) : super(key: key);
+  const LineChartSimple({
+    Key? key,
+    required this.model,
+  }) : super(key: key);
+
+  final IndexAssetModel model;
 
   @override
   _LineChartSimpleState createState() => _LineChartSimpleState();
@@ -16,68 +23,34 @@ class _LineChartSimpleState extends State<LineChartSimple> {
 
   @override
   Widget build(BuildContext context) {
-    return AspectRatio(
-      aspectRatio: 1.70,
-      child: Container(
-        decoration: const BoxDecoration(
-          borderRadius: BorderRadius.all(
-            Radius.circular(18),
-          ),
-          color: Color(0xff232d37),
-        ),
-        child: Padding(
-          padding: const EdgeInsets.only(
-            right: 18.0,
-            left: 12.0,
-            top: 24,
-            bottom: 12,
-          ),
-          child: LineChart(
-            mainData(),
+    return Container(
+      color: const Color(0xff262545),
+      child: Padding(
+        padding: EdgeInsets.only(left: 28.0, right: 28),
+        child: AspectRatio(
+          aspectRatio: 1.70,
+          child: Container(
+            decoration: const BoxDecoration(
+              borderRadius: BorderRadius.all(
+                Radius.circular(18),
+              ),
+              color: Color(0xff232d37),
+            ),
+            child: Padding(
+              padding: const EdgeInsets.only(
+                right: 18.0,
+                left: 12.0,
+                top: 24,
+                bottom: 12,
+              ),
+              child: LineChart(
+                mainData(),
+              ),
+            ),
           ),
         ),
       ),
     );
-
-    // return Stack(
-    //   children: <Widget>[
-    //     AspectRatio(
-    //       aspectRatio: 1.70,
-    //       child: Container(
-    //         decoration: const BoxDecoration(
-    //             borderRadius: BorderRadius.all(
-    //               Radius.circular(18),
-    //             ),
-    //             color: Color(0xff232d37)),
-    //         child: Padding(
-    //           padding: const EdgeInsets.only(
-    //               right: 18.0, left: 12.0, top: 24, bottom: 12),
-    //           child: LineChart(
-    //             mainData(),
-    //           ),
-    //         ),
-    //       ),
-    //     ),
-    //     SizedBox(
-    //       width: 60,
-    //       height: 34,
-    //       child: TextButton(
-    //         onPressed: () {
-    //           setState(() {
-    //             showAvg = !showAvg;
-    //           });
-    //         },
-    //         child: Text(
-    //           'avg',
-    //           style: TextStyle(
-    //               fontSize: 12,
-    //               color:
-    //                   showAvg ? Colors.white.withOpacity(0.5) : Colors.white),
-    //         ),
-    //       ),
-    //     ),
-    //   ],
-    // );
   }
 
   Widget bottomTitleWidgets(double value, TitleMeta meta) {

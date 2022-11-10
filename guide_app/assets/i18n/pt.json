@@ -1,6 +1,7 @@
 {
     "index": {
         "hello_world": "Olá Mundo",
-        "empty": "Ops, não encontramos nada"
+        "empty": "Ops, não encontramos nada",
+        "title": "Variação de ativo"
     }
 }

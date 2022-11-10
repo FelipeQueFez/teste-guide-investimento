@@ -5,8 +5,8 @@ import 'package:guide_app/src/guide_app_routes.dart';
 import 'package:guide_core/guide_core.dart' show BaseLoadingState, Tr;
 import 'package:guide_ui/guide_ui.dart';
 import '../stores/index_store.dart';
-import '../widgets/bar_chart/bar_chart_page2.dart';
-import '../widgets/line_chart/line_chart_page.dart';
+import '../widgets/charts/bar_chart_simple.dart';
+import '../widgets/charts/line_chart_simple.dart';
 
 class IndexScreen extends StatefulWidget {
   const IndexScreen({Key? key}) : super(key: key);
@@ -43,8 +43,9 @@ class _IndexScreenState extends State<IndexScreen> {
         child: const Icon(Icons.add),
       ),
       appBar: AppBar(
-        //TODO:in development
-        title: Text('Titulo'),
+        title: Text(
+          Tr.of(context, "index.title"),
+        ),
       ),
       child: GuideContainer(
         child: _body(
@@ -81,11 +82,15 @@ class _IndexScreenState extends State<IndexScreen> {
               } else if (store.state.loading == BaseLoadingState.loaded) {
                 return Column(
                   children: [
-                    LineChartPage(),
-                    SizedBox(
+                    LineChartSimple(
+                      model: store.state.databinding.model!,
+                    ),
+                    const SizedBox(
                       height: 8,
                     ),
-                    BarChartPage2(),
+                    BarChartSimple(
+                      model: store.state.databinding.model!,
+                    ),
                   ],
                 );
               } else if (store.state.loading == BaseLoadingState.empty) {
@@ -94,10 +99,7 @@ class _IndexScreenState extends State<IndexScreen> {
                     height: 150,
                     width: 150,
                     child: Text(
-                      Tr.of(
-                        context,
-                        "index.empty",
-                      ),
+                      Tr.of(context, "index.empty"),
                     ),
                   ),
                 );
