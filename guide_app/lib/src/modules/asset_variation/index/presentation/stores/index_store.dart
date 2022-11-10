@@ -28,4 +28,39 @@ abstract class _IndexStoreBase with Store {
       state.copyWith(loading: BaseLoadingState.loaded),
     );
   }
+
+  @action
+  searchAsset(String name) async {
+    try {
+      setState(
+        state.copyWith(loading: BaseLoadingState.loading),
+      );
+
+      var _result = await fetchAsset.call(name);
+      _result.fold((success) {
+        setState(
+          state.copyWith(
+            databinding: state.databinding.copyWith(
+              model: success,
+            ),
+            loading: BaseLoadingState.loaded,
+          ),
+        );
+      }, (error) {
+        setState(
+          state.copyWith(
+            loading: BaseLoadingState.error,
+            errorMessage: error.toString(),
+          ),
+        );
+      });
+    } catch (e) {
+      setState(
+        state.copyWith(
+          loading: BaseLoadingState.error,
+          errorMessage: e.toString(),
+        ),
+      );
+    }
+  }
 }

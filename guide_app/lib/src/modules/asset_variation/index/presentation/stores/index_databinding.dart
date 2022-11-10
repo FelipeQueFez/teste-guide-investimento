@@ -1,11 +1,23 @@
+import '../../data/models/index_asset_model.dart';
+
 class IndexDatabinding {
-  IndexDatabinding();
+  IndexDatabinding({
+    required this.model,
+  });
+
+  final IndexAssetModel? model;
 
   factory IndexDatabinding.initial() {
-    return IndexDatabinding();
+    return IndexDatabinding(
+      model: null,
+    );
   }
 
-  IndexDatabinding copyWith() {
-    return IndexDatabinding();
+  IndexDatabinding copyWith({
+    IndexAssetModel? model,
+  }) {
+    return IndexDatabinding(
+      model: model ?? this.model,
+    );
   }
 }

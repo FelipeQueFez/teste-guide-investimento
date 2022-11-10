@@ -30,6 +30,8 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   flutter_mobx: 2.0.4
+  fl_chart: ^0.55.2
+  flutter_svg: ^0.21.0-nullsafety.0
   guide_core:
     path: ../guide_core
     # git:

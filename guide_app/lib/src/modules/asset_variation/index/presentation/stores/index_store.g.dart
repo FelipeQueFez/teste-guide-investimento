@@ -25,6 +25,14 @@ mixin _$IndexStore on _IndexStoreBase, Store {
     });
   }
 
+  late final _$searchAssetAsyncAction =
+      AsyncAction('_IndexStoreBase.searchAsset', context: context);
+
+  @override
+  Future searchAsset(String name) {
+    return _$searchAssetAsyncAction.run(() => super.searchAsset(name));
+  }
+
   late final _$_IndexStoreBaseActionController =
       ActionController(name: '_IndexStoreBase', context: context);
 

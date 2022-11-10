@@ -1,5 +1,6 @@
 {
     "index": {
-        "hello_world": "Olá Mundo"
+        "hello_world": "Olá Mundo",
+        "empty": "Ops, não encontramos nada"
     }
 }

@@ -5,7 +5,6 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:guide_core/guide_core.dart';
 
 import 'modules/asset_variation/index/presentation/screens/index_screen.dart';
-import 'modules/asset_variation/index_chart/presentation/screens/index_chart_screen.dart';
 
 class GuideAppWidget extends StatelessWidget {
   const GuideAppWidget({
@@ -63,10 +62,6 @@ class GuidePageRoute extends StatelessWidget {
         switch (settings.name) {
           case GuideAppRoutes.init:
             page = const IndexScreen();
-            break;
-
-          case GuideAppRoutes.index_chart:
-            page = IndexChartScreen();
             break;
         }
         return PageRouteBuilder(
